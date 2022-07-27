@@ -1,0 +1,27 @@
+.ui-typing-box {
+    width: 100%;
+    font-size: 16px;
+    pre:after {
+        content: '｜';
+        animation: typing 1000ms infinite;
+        font-weight: 700;
+        margin-left: 1px;
+        font-size: 1em;
+    }
+    pre {
+        line-height: 25px;
+        padding: 20px 0px;
+        color: invert(100%);
+    }
+}
+@keyframes typing {
+    0% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 1;
+    }
+}
