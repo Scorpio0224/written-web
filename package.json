@@ -1,6 +1,6 @@
 {
   "private": true,
-  "author":"liuyang <ly2548190794@163.com>",
+  "author": "liuyang <ly2548190794@163.com>",
   "scripts": {
     "dev": "umi dev",
     "build": "umi build",
@@ -9,6 +9,9 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "markdown-it": "^13.0.1",
+    "react-intersection-observer": "^9.4.0",
+    "react-transition-group": "^4.4.5",
     "umi": "^4.0.8"
   },
   "devDependencies": {

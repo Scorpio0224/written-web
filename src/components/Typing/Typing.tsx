@@ -1,36 +1,43 @@
 import * as React from 'react';
 import './Typing.less';
 
-const code = `
-const Typing: React.FC = () => {
-    const [data, setData] = React.useState('');
+// const code = `
+// const Typing: React.FC = () => {
+//     const [data, setData] = React.useState('');
 
-    const [count, setCount] = React.useState(0);
+//     const [count, setCount] = React.useState(0);
 
-    React.useEffect(() => {
-        setTimeout(() => {
-            setData(data + code.split('')[count]);
-            if( count < code.length ) {
-                setCount(count + 1)
-            } else {
-                setCount(0);
-            }
-        }, 100);
-    }, [data])
+//     React.useEffect(() => {
+//         setTimeout(() => {
+//             setData(data + code.split('')[count]);
+//             if( count < code.length ) {
+//                 setCount(count + 1)
+//             } else {
+//                 setCount(0);
+//             }
+//         }, 100);
+//     }, [data])
 
-    return (
-        <div className="ui-typing-box">
-            <pre>
-              {data}
-            </pre>
-        </div>
-    )
+//     return (
+//         <div className="ui-typing-box">
+//             <pre>
+//               {data}
+//             </pre>
+//         </div>
+//     )
+// }
+
+// export default Typing;
+// `
+
+interface TypingPropsType {
+    code: string;
+    setRes?: (pr: string) => void;
 }
 
-export default Typing;
-`
+const Typing: React.FC<TypingPropsType> = (props) => {
+    const { code, setRes } = props;
 
-const Typing: React.FC = () => {
     const [data, setData] = React.useState('');
 
     const [count, setCount] = React.useState(0);
@@ -44,7 +51,9 @@ const Typing: React.FC = () => {
                 setData('');
                 setCount(0);
             }
-        }, Math.floor(Math.random() * 200));
+        }, Math.floor(Math.random() * 500));
+
+        setRes?.(data);
     }, [data])
 
     return (
