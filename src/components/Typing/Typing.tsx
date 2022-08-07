@@ -43,15 +43,16 @@ const Typing: React.FC<TypingPropsType> = (props) => {
     const [count, setCount] = React.useState(0);
 
     React.useEffect(() => {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             if( count < code.length ) {
                 setData(data + code.split('')[count]);
                 setCount(count + 1)
             } else {
-                setData('');
-                setCount(0);
+                // setData('');
+                // setCount(0);
+                clearTimeout(timer);
             }
-        }, Math.floor(Math.random() * 200));
+        }, Math.floor(Math.random() * 100));
 
         setRes?.(data);
     }, [data])

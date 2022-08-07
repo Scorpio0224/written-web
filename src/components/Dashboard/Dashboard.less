@@ -112,22 +112,39 @@
                 .file-name {
                     margin-left: 50%;
                     transform: translateX(-50%);
-                    width: 50px;
+                    max-width: 110px;
                     overflow: hidden;
                     height: 100%;
                     color: #000;
                     // background-color: pink;
                     font-size: 14px;
                     line-height: 2vw;
+                    display: flex;
+                    justify-content: center;
                     .file-state {
                         color: #ccc;
+                        overflow: hidden;
                     }
                 }
             }
             .footer{
                 height: 2vw;
                 width: 100%;
+                text-align: end;
+                color: rgb(189, 186, 186);
+                right: 15px;
+                font-size: 12px;
+                line-height: 25px;
+                padding-right: 20px;
             }
         }
     }
+}
+
+.edit-enter {
+    width: 0px;
+}
+.edit-enter-active {
+    width: 110px;
+    transition: width 1000ms;
 }

@@ -18,28 +18,24 @@ const md = new MarkdownIt();
 // 不学腐儒酸。
 // ~~~`
 
-const code = `# Written-Web
-#### 介绍
-Written官网
-#### 软件架构
-软件架构说明
-#### 安装教程
-1.  xxxx
-2.  xxxx
-3.  xxxx
-#### 参与贡献
+const code = `
+# written
+*written是一款用于编辑markdown文档的跨平台桌面端应用程序*
+## 技术栈
+- HTML、CSS、Typescript
+- electron
+- React
+## GitHub地址
+[https://gitee.com/liuyang0316/written.git](https://gitee.com/liuyang0316/written.git)
+## 源码使用教程
+1. clone
+2. yarn
+3. yarn start
+## 参与贡献
 1.  Fork 本仓库
 2.  新建 Feat_xxx 分支
 3.  提交代码
-4.  新建 Pull Request
-#### 特技
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
-`
+4.  新建 Pull Request`
 
 interface DashboardPropType {
     visiable: boolean;
@@ -52,6 +48,8 @@ const Dashboard: React.FC<DashboardPropType> = (props) => {
 
     const [res, setRes] = React.useState('');
 
+    const [edited, setEdited] = React.useState(false);
+
     const leftRef = React.useRef(null);
 
     const rightRef = React.useRef(null);
@@ -60,6 +58,7 @@ const Dashboard: React.FC<DashboardPropType> = (props) => {
         setRes(`<pre>${md.render(origin)}</pre>`);
         const { current } = rightRef;
         const { current: leftCurrent } = leftRef;
+        setEdited(true);
         if (current) {
             current.scrollTop = current.scrollHeight;
             leftCurrent.scrollTop = leftCurrent.scrollHeight;
@@ -79,9 +78,11 @@ const Dashboard: React.FC<DashboardPropType> = (props) => {
                     <div className='written-page'>
                         <div className="header">
                             <div className="file-name">
-                                未命名
+                                <div className='file-name-content'>
+                                    未命名
+                                </div>
                                 <span className='file-state'>
-                                    {/* - 已编辑 */}
+                                    - 已编辑
                                 </span>
                             </div>
                         </div>
@@ -92,7 +93,9 @@ const Dashboard: React.FC<DashboardPropType> = (props) => {
                             ref={rightRef}
                             dangerouslySetInnerHTML={{ __html: res }}
                         />
-                        <div className="footer"></div>
+                        <div className="footer">
+                            {origin.length} 字符
+                        </div>
                     </div>
                     <img src={writtenDashboard} className='written-dashboard' alt="" />
                 </div>
