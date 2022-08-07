@@ -51,7 +51,7 @@ const Typing: React.FC<TypingPropsType> = (props) => {
                 setData('');
                 setCount(0);
             }
-        }, Math.floor(Math.random() * 500));
+        }, Math.floor(Math.random() * 200));
 
         setRes?.(data);
     }, [data])

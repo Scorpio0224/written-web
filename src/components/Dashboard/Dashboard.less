@@ -35,6 +35,9 @@
             justify-content: space-around;
             align-items: space-around;
             flex-wrap: wrap;
+            ::-webkit-scrollbar{
+                display:none;
+            }
             .left,
             .right {
                 height: calc(100% - 4vw);
@@ -42,12 +45,20 @@
                 flex-shrink: 0;
                 padding: 10px 15px;
                 box-sizing: border-box;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                text-overflow: clip;
+                white-space: wrap;
+                word-break: break-all;
+                line-height: 1.5em;
             }
             .left pre{
                 font-size: 16px;
                 resize: none;
                 line-height: 1.7em;
                 font-family:Verdana,Geneva,sans-serif;
+                white-space: pre-wrap;
+                word-break: break-all;
             }
             .right pre{
                 font-family:Verdana,Geneva,sans-serif;
@@ -64,11 +75,11 @@
                     border: 1px solid #e8e8e8;
                     border-radius: 5px;
                 }
-                h1, h2, h3, p {
+                h1, h2, h3, h4, p {
                     margin-bottom: 0px;
                     line-height: 1.5em;
                 }
-                ul {
+                ul, ol {
                     margin-top: -35px;
                     padding: 0px;
                     margin-bottom: -35px;
@@ -82,11 +93,11 @@
                 li {
                     margin-top: -20px;
                     margin-left: 20px;
-                    ul {
+                    ul, ol {
                         margin-top: 0px;
                         li {
                             margin-top: -10px;
-                            ul {
+                            ul, ol {
                                 margin-bottom: -50px;
                             }
                         }
