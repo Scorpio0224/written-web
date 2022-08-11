@@ -1,13 +1,16 @@
 import * as React from 'react';
 import './Context.less';
+import { useTranslation } from 'react-i18next'
 
-const context = 'A software of markdown edit made by Electron,Typescript and React'
+const context = ''
 const copyRight = '©️ CopyRight 2022'
 const author = 'ly2548190794@163.com'
 
 const Context : React.FC<any> = () => {
+    const {t} = useTranslation();
+
     return <div className='context-box'>
-        {context}
+        {t('WrittenInfo')}
         <br />
         <b>
             {copyRight}
@@ -17,7 +20,7 @@ const Context : React.FC<any> = () => {
             {author}
         </b>
         <br />
-        <a href="javascript:;">GitHub For Written &gt;</a>
+        <a href="https://gitee.com/liuyang0316/written.git" target="_black">{t('GitHub')} &gt;</a>
     </div>
 }
 

@@ -18,7 +18,7 @@ const ContentTitle: React.FC = () => {
                 mountOnEnter
             >
                 <div className="content-title">
-                    Written   A software of markdown edit made by
+                    A surprise for your readme document
                 </div>
             </CSSTransition>
         </div>

@@ -5,6 +5,7 @@ import Line from '@/components/Line/Line';
 import Context from '@/components/Context/Context';
 import Dashboard from '@/components/Dashboard/Dashboard';
 import './index.global.less';
+import '../i18n/index';
 import { useEffect, useState } from 'react';
 
 export default function HomePage() {
