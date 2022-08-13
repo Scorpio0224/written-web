@@ -18,7 +18,7 @@ const ContentTitle: React.FC = () => {
                 mountOnEnter
             >
                 <div className="content-title">
-                    A surprise for your readme document
+                    A surprise for your README document
                 </div>
             </CSSTransition>
         </div>
