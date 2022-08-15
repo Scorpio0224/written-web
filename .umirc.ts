@@ -1,3 +1,5 @@
 export default {
-  npmClient: 'yarn'
+  npmClient: 'yarn',
+  links: [{ rel: 'icon', href: './src/images/favico.png' }],
+  title: 'Written',
 };
