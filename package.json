@@ -9,6 +9,7 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "ahooks": "^3.7.0",
     "i18next": "^21.9.0",
     "markdown-it": "^13.0.1",
     "react-i18next": "^11.18.3",
