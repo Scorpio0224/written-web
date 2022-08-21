@@ -1,6 +1,7 @@
 import './TopNav.less';
 import react, { useState } from 'react';
 import writtenLogo from '../../images/written.svg';
+import pkg from '../../public/written-1.0.1.pkg';
 import { useTranslation } from 'react-i18next';
 
 const TopNav = () => {
@@ -25,7 +26,7 @@ const TopNav = () => {
     return (
         <div className="top-nav-box">
             <img src={writtenLogo} alt="logo" />
-            {/* <a download href="../../public/dashboard-bgc-color.svg">Download</a> */}
+            <a download href={pkg}>Download</a>
             <div className='top-nav-lng' onClick={changeLng}>{currentLng === 'zh' ? "简体中文" : "English"}</div>
         </div>
     )
