@@ -6,6 +6,7 @@ import imac from '../../images/iMac.svg';
 import m1 from '../../public/written-1.0.1.pkg';
 import inter from '../../public/written-1.0.1.pkg';
 import './Download.less';
+import { useTranslation } from 'react-i18next';
 
 interface DownloadPropsType {
     visiable: boolean;
@@ -13,6 +14,8 @@ interface DownloadPropsType {
 
 const Download: React.FC<DownloadPropsType>  = (props) => {
     const { visiable } = props;
+
+    const { t } = useTranslation();
 
     return (
         <div className='download'>
@@ -34,15 +37,15 @@ const Download: React.FC<DownloadPropsType>  = (props) => {
                 <CSSTransitionMiddle visiable={visiable} name="from-right" >
                     <div className="right">
                         <ContentTitle fontSize={40} context='Mac M1 V1.0.1' name='purple'/>
-                        <ContentTitle fontSize={30} context='适用于macOS 11，Big Sur(2020)或更高版本' name='black'/>
-                        <a href={m1}>Download &gt;</a>
+                        <ContentTitle fontSize={30} context={t("Apply")} name='black'/>
+                        <a href={m1}>{t('Download')} &gt;</a>
                     </div>
                 </CSSTransitionMiddle>
                 <CSSTransitionMiddle visiable={visiable} name="from-left" >
                     <div className="right">
                         <ContentTitle fontSize={40} context='Mac inter V1.0.1' name='origin'/>
-                        <ContentTitle fontSize={30} context='适用于macOS 11，Big Sur(2020)或更高版本' name='black'/>
-                        <a href={inter}>Download &gt;</a>
+                        <ContentTitle fontSize={30} context={t("Apply")} name='black'/>
+                        <a href={inter}>{t('Download')} &gt;</a>
                     </div>
                 </CSSTransitionMiddle>
                 <CSSTransitionMiddle visiable={visiable} name="from-right" >

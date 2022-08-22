@@ -4,8 +4,7 @@ import CSSTransitionMiddle from '../CSSTransitionMiddle/CSSTransitionMiddle';
 import './Explain.less';
 import Typing from '../Typing/Typing';
 import stepImg from '../../images/yarn-step-img.svg';
-
-const explainText = 'Currently, only MAC M1 and inter versions are supported, Windows version is not adapted yet, but it can be run. Please refer to the left apprentice for the running steps';
+import { useTranslation } from 'react-i18next';
 
 interface ExplainPropsType {
     visiable: boolean;
@@ -20,6 +19,8 @@ const commands = [
 
 const Explain: React.FC<ExplainPropsType> = (props) => {
     const {visiable} = props;
+
+    const { t } = useTranslation();
 
     return (
         <div className="explain-box">
@@ -52,7 +53,7 @@ const Explain: React.FC<ExplainPropsType> = (props) => {
                     <div className='explain-title'>
                         <ContentTitle fontSize={50} context='Windows is in plan' name='blue'/>
                     </div>
-                    <ContentTitle fontSize={24} context={explainText} name='gray'/>
+                    <ContentTitle fontSize={24} context={t('Windows')} name='gray'/>
                 </div>
             </CSSTransitionMiddle>
         </div>

@@ -1,4 +1,9 @@
 {
     "WrittenInfo":"Writen是一款使用Electron、Typescript和react开发的一款跨平台的markdown编辑软件",
-    "GitHub": "GitHub仓库"
+    "GitHub": "GitHub仓库",
+    "Download": "下载",
+    "Unname": "未命名",
+    "Edited": "已编辑",
+    "Windows": "当前仅支持macOS M1版本和macOS inter版本，Windows端暂时未适配，但可在本地运行，具体步骤如左。",
+    "Apply": "适用于macOS 11，Big Sur(2020)或更高版本"
 }

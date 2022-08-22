@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import bgcImg from '../../images/dashboard-bgc-color.svg';
 import writtenDashboard from '../../images/written-dashboard.png'
 // import { CSSTransition } from 'react-transition-group';
@@ -54,6 +55,8 @@ const Dashboard: React.FC<DashboardPropType> = (props) => {
     const leftRef = React.useRef<HTMLDivElement>(null);
 
     const rightRef = React.useRef<HTMLDivElement>(null);
+
+    const { t } = useTranslation();
 
     React.useEffect(() => {
         setRes(`<pre>${md.render(origin)}</pre>`);
