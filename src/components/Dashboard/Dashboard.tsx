@@ -1,7 +1,8 @@
 import * as React from 'react';
 import bgcImg from '../../images/dashboard-bgc-color.svg';
 import writtenDashboard from '../../images/written-dashboard.png'
-import { CSSTransition } from 'react-transition-group';
+// import { CSSTransition } from 'react-transition-group';
+import CSSTransitionMiddle from '../CSSTransitionMiddle/CSSTransitionMiddle';
 import Typing from '../Typing/Typing';
 import './Dashboard.less';
 
@@ -50,16 +51,16 @@ const Dashboard: React.FC<DashboardPropType> = (props) => {
 
     const [edited, setEdited] = React.useState(false);
 
-    const leftRef = React.useRef(null);
+    const leftRef = React.useRef<HTMLDivElement>(null);
 
-    const rightRef = React.useRef(null);
+    const rightRef = React.useRef<HTMLDivElement>(null);
 
     React.useEffect(() => {
         setRes(`<pre>${md.render(origin)}</pre>`);
         const { current } = rightRef;
         const { current: leftCurrent } = leftRef;
         setEdited(true);
-        if (current) {
+        if (current && leftCurrent) {
             current.scrollTop = current.scrollHeight;
             leftCurrent.scrollTop = leftCurrent.scrollHeight;
         }
@@ -68,11 +69,10 @@ const Dashboard: React.FC<DashboardPropType> = (props) => {
     return (
         <div className="dashboard-box">
             <img src={bgcImg} className="dashboard-bgc" />
-            <CSSTransition
-                in={visiable}
+            <CSSTransitionMiddle
+                visiable={visiable}
                 timeout={1000}
-                classNames="alert"
-                unmountOnExit
+                name="alert"
             >
                 <div className="written-box">
                     <div className='written-page'>
@@ -99,7 +99,7 @@ const Dashboard: React.FC<DashboardPropType> = (props) => {
                     </div>
                     <img src={writtenDashboard} className='written-dashboard' alt="" />
                 </div>
-            </CSSTransition>
+            </CSSTransitionMiddle>
         </div>
     )
 }

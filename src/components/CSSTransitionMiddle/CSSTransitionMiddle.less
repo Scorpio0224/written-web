@@ -1,0 +1,68 @@
+// 缓出缓进
+.alert-enter {
+    opacity: 0;
+    transform: translateY(-10%);
+}
+
+.alert-enter-active {
+    transform: translateY(0%);
+    opacity: 1;
+    transition: opacity 1000ms, transform 1000ms;
+}
+
+.alert-exit {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.alert-exit-active{
+    opacity: 0;
+    transform: translateY(10%);
+    transition: opacity 1000ms, transform 1000ms;
+}
+
+// 左右开弓
+.from-left-enter {
+    transform: translateX(-10%);
+    opacity: 0;
+}
+
+.from-left-enter-active {
+    transform: translateX(0%);
+    opacity: 1;
+    transition: opacity 1000ms, transform 1000ms;
+}
+
+.from-left-exit {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.from-left-exit-active{
+    opacity: 0;
+    transform: translateX(-10%);
+    transition: opacity 1000ms, transform 1000ms;
+}
+
+.from-right-enter {
+    transform: translateX(10%);
+    opacity: 0;
+}
+
+.from-right-enter-active {
+    transform: translateX(0%);
+    opacity: 1;
+    transition: opacity 1000ms, transform 1000ms;
+}
+
+.from-right-exit {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.from-right-exit-active{
+    opacity: 0;
+    transform: translateX(10%);
+    transition: opacity 1000ms, transform 1000ms;
+}
+

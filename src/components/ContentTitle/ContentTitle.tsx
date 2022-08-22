@@ -1,26 +1,21 @@
 import * as React from 'react';
 import './ContentTitle.less';
-import { CSSTransition } from 'react-transition-group';
 
-const ContentTitle: React.FC = () => {
-    const [visiable, setVisiable] = React.useState(false);
+interface ContentTitleProps {
+    context: string;
+    name: string;
+    fontSize?: number;
+    width?: number;
+}
 
-    React.useEffect(() => {
-        setVisiable(true);
-    }, []);
+const ContentTitle: React.FC<ContentTitleProps> = (props) => {
+    const { context, name, fontSize, width } = props;
 
     return (
         <div className="content-title-box">
-            <CSSTransition
-                in={visiable}
-                timeout={1000}
-                classNames="alert"
-                mountOnEnter
-            >
-                <div className="content-title">
-                    A surprise for your README document
-                </div>
-            </CSSTransition>
+            <div className={`content-title ${name}`} style={{fontSize: `${fontSize || 64}px`, width: `${width}%`}}>
+                {context}
+            </div>
         </div>
     )
 }

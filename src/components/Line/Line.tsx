@@ -20,11 +20,12 @@ const Line: React.FC<LinePropsType> = (props) => {
         if(position) {
             isInview?.(inView);
         };
+        console.log(children);
     }, [inView]);
 
     return (
         <div className="line-box">
-            {position ? <div className="inview" style={{top: `${position}%`, height: `${range}%`}} ref={ref} /> : null}
+            {isInview ? <div className="inview" style={{top: `${position}%`, height: `${range}%`}} ref={ref} /> : null}
             {children}
         </div>
     )

@@ -1,53 +1,43 @@
 body {
-    background-color: #060d20;
+    // background-color: #060d20;
     font-family: "Alliance1","Alliance1HeaderFallback",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     overflow-x: hidden;
-    cursor: none;
+    // cursor: none;
 }
 
-.mouse-box {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 110px;
-    height: 40px;
-    z-index: 99999;
-    transform: translateY(-50%) translateX(-50%);
-    pointer-events:none;
-    img{
-        width: 100%;
-        height: 100%;
-    }
-}
+// .mouse-box {
+//     position: absolute;
+//     top: 0px;
+//     left: 0px;
+//     width: 110px;
+//     height: 40px;
+//     z-index: 99999;
+//     transform: translateY(-50%) translateX(-50%);
+//     pointer-events:none;
+//     img{
+//         width: 100%;
+//         height: 100%;
+//     }
+// }
 
 * {
     padding: 0px;
     margin: 0px;
 }
 
-.content-box {
+.content-box,
+.download-box {
     padding: 0px 10.5vw;
 }
 
-.alert-enter {
-    opacity: 0;
-    transform: translateY(-10%);
+.content-box {
+    background-color: #060d20;
+    .context-title-box {
+        padding: 70px 20px 20px 50px;
+    }
 }
-.alert-enter-active {
-    transform: translateY(0%);
-    opacity: 1;
-    transition: opacity 1000ms, transform 1000ms;
-}
-
-.alert-exit{
-    opacity: 1;
-    transform: translateY(0%);
-}
-
-.alert-exit-active{
-    opacity: 0;
-    transform: translateY(10%);
-    transition: opacity 1000ms, transform 1000ms;
+.download-box {
+    background-color: #fff;
 }
 
 // body::-webkit-scrollbar {
