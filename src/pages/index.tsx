@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import Explain from '@/components/Explain/Explain';
 // import { useMouse } from 'ahooks';
 // import favico from '../images/written.svg';
+import Transition from '@/components/Tranistiton/Transition';
 import Download from '@/components/Download/Download';
 
 export default function HomePage() {
@@ -18,6 +19,8 @@ export default function HomePage() {
   const [explain, setExplain] = useState(false);
 
   const [downloadVisi, setDownloadVisi] = useState(false);
+
+  const [blank, setBlack] = useState(false);
   // const state: {
   //   pageX: number,
   //   pageY: number,
@@ -29,8 +32,12 @@ export default function HomePage() {
   //   return isShow ? 1 : 0;
   // }
 
+  const changeBgc = () => {
+    return !explain && blank;
+  }
+
   return (
-    <div>
+    <div className={changeBgc() ? 'global-writh' : 'global-black'}>
       {/* <div className='mouse-box' style={{top: `${state.pageY}px`, left: `${state.pageX}px`, opacity: visiable()}}>
         <img src={favico} alt="" />
       </div> */}
@@ -45,11 +52,14 @@ export default function HomePage() {
         <Line position={40} isInview={setBoardShow} range={30} > 
           <Dashboard visiable={dashboardShow} />
         </Line>
-        <Line position={60} isInview={setExplain} range={30} >
+        <Line position={50} isInview={setExplain} range={5} >
           <Explain visiable={explain} />
         </Line>
       </div>
       <div className='download-box'>
+        <Line position={90} isInview={setBlack} range={130} >
+            <Transition visiable={changeBgc()} />
+        </Line>
         <Line position={50} isInview={setDownloadVisi} range={20} > 
           <Download visiable={downloadVisi} />
         </Line>

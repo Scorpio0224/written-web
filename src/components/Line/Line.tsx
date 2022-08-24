@@ -20,7 +20,6 @@ const Line: React.FC<LinePropsType> = (props) => {
         if(position) {
             isInview?.(inView);
         };
-        console.log(children);
     }, [inView]);
 
     return (

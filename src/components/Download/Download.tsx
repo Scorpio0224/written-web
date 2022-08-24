@@ -19,41 +19,44 @@ const Download: React.FC<DownloadPropsType>  = (props) => {
 
     return (
         <div className='download'>
-            <div className="title">
+            {/* <div className="title">
                 <CSSTransitionMiddle visiable={visiable} name="alert" >
                     <div className="title-explain">
-                    <ContentTitle context='Ready player two.' name='red'/>
-                        <ContentTitle context='Download pkg of macOS M1 and macOS inter' fontSize={40} name='black'/>
+                        <ContentTitle context='Ready player two.' name='red'/>
                     </div>
                 </CSSTransitionMiddle>
-            </div>
+            </div> */}
             <div className="download-item">
-                <CSSTransitionMiddle visiable={visiable} name="from-left" >
-                    <div className="left">
-                        {/* <DownloadBtn version="Written 1.0.1 command 2022-02-21" /> */}
-                        <img src={mbp} alt="m1" />
-                    </div>
-                </CSSTransitionMiddle>
-                <CSSTransitionMiddle visiable={visiable} name="from-right" >
-                    <div className="right">
-                        <ContentTitle fontSize={40} context='Mac M1 V1.0.1' name='purple'/>
-                        <ContentTitle fontSize={30} context={t("Apply")} name='black'/>
-                        <a href={m1}>{t('Download')} &gt;</a>
-                    </div>
-                </CSSTransitionMiddle>
-                <CSSTransitionMiddle visiable={visiable} name="from-left" >
-                    <div className="right">
-                        <ContentTitle fontSize={40} context='Mac inter V1.0.1' name='origin'/>
-                        <ContentTitle fontSize={30} context={t("Apply")} name='black'/>
-                        <a href={inter}>{t('Download')} &gt;</a>
-                    </div>
-                </CSSTransitionMiddle>
-                <CSSTransitionMiddle visiable={visiable} name="from-right" >
-                    <div className="left">
-                        {/* <DownloadBtn version="Written 1.0.1 command 2022-02-21" /> */}
-                        <img src={imac} alt="m1" />
-                    </div>
-                </CSSTransitionMiddle>
+                <div className="download-m1">
+                    <CSSTransitionMiddle visiable={visiable} name="from-left" >
+                        <div className="img">
+                            {/* <DownloadBtn version="Written 1.0.1 command 2022-02-21" /> */}
+                            <img src={mbp} alt="m1" />
+                        </div>
+                    </CSSTransitionMiddle>
+                    <CSSTransitionMiddle visiable={visiable} name="from-right" >
+                        <div className="context">
+                            <ContentTitle fontSize={40} context='Mac Apple V1.0.1' name='purple'/>
+                            <ContentTitle fontSize={30} context={t("Apply")} name='black'/>
+                            <a href={m1}>{t('Download')} &gt;</a>
+                        </div>
+                    </CSSTransitionMiddle>
+                </div>
+                <div className='download-inter'>
+                    <CSSTransitionMiddle visiable={visiable} name="from-left" >
+                        <div className="img">
+                            {/* <DownloadBtn version="Written 1.0.1 command 2022-02-21" /> */}
+                            <img src={imac} alt="m1" />
+                        </div>
+                    </CSSTransitionMiddle>
+                    <CSSTransitionMiddle visiable={visiable} name="from-right" >
+                        <div className="context">
+                            <ContentTitle fontSize={40} context='Mac Inter V1.0.1' name='origin'/>
+                            <ContentTitle fontSize={30} context={t("Apply")} name='black'/>
+                            <a href={inter}>{t('Download')} &gt;</a>
+                        </div>
+                    </CSSTransitionMiddle>
+                </div>
             </div>
         </div>
     )
